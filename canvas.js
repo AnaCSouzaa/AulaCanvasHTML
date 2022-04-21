@@ -1,4 +1,4 @@
-var dx, dy;
+var dx, dy, r;
 var canvas = document.querySelector('canvas');
 var c = canvas.getContext('2d');
 canvas.height = window.innerHeight;
@@ -24,10 +24,11 @@ for(var r = 0; r <= 10; r++){
 
 for(var b = 0; b <= 30; b++){
     var randomColor = Math.floor(Math.random()*16777215).toString(16);
+    r = Math.floor(Math.random()*10);
     dx = Math.floor(Math.random()*950+400) ;
     dy = Math.floor(Math.random()*750);
     c.beginPath();
-    c.arc(dx,dy,60,0, Math.PI*2,false);
+    c.arc(dx,dy,r,0, Math.PI*2,false);
     c.strokeStyle = "#" + randomColor;
     c.stroke();
 }
